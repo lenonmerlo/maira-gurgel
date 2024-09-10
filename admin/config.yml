@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main # O branch do GitHub onde o conteúdo será salvo
+
+media_folder: "img/uploads" # Pasta para imagens do blog
+public_folder: "/img/uploads" # Caminho para as imagens no site
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
